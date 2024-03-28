@@ -5,6 +5,7 @@ import 'tinymce/icons/default/icons';
 import 'tinymce/plugins/advlist';
 import 'tinymce/plugins/code';
 import 'tinymce/plugins/image';
+import 'tinymce/plugins/table';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/plugins/media';
@@ -29,13 +30,13 @@ const options: RawEditorSettings = {
     convert_fonts_to_spans: true,
     convert_urls: false,
     paste_data_images: true,
-    plugins: 'code image media link lists advlist paste',
+    plugins: 'code image media link lists advlist paste table',
     min_height: 400,
     max_height: 800,
     removed_menuitems: 'newdocument',
     resize: true,
     skin: false,
-    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter | bullist numlist outdent indent | link image media | assets contents',
+    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image media',
 
     images_upload_handler: async (blob: Any, success: (url: string) => void, failure: (message: string) => void) => {
         const file = new File([blob.blob()], blob.filename(), { lastModified: new Date().getTime() });
